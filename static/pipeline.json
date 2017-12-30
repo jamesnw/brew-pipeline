@@ -1,0 +1,74 @@
+{
+  "updated": "2017-12-30T15:21:34.951Z",
+  "beers": [
+    {
+      "tap": 1,
+      "name": "Not a Tractor IPA",
+      "style": "New England IPA",
+      "description": "If it\"s not green, it\"s not a tractor. Hops: Grungeist (Green Ghost), Polaris, Celeia, Simcoe, Mosaic",
+      "kegged": "10/1/2017",
+      "empty": "1/29/2018",
+      "abv": 5.4,
+      "status": "ontap",
+      "untappd": "https://untappd.com/b/what-to-brewery-not-a-tractor/2355202"
+    },
+    {
+      "tap": 2,
+      "name": "Odd Man Alt",
+      "style": "Dusseldorf Altbier",
+      "description": "Malty but slightly bitter.",
+      "kegged": "12/22/2017",
+      "empty": "4/21/2018",
+      "abv": 5.5,
+      "status": "ontap",
+      "untappd": "https://untappd.com/b/what-to-brewery-odd-man-alt/2448272"
+    },
+    {
+      "tap": 4,
+      "name": "Sorghum Graff Paper Scissors",
+      "style": "Specialty Cider",
+      "description": "Lightly hopped dry cider with Merry Lea Sorghum",
+      "kegged": "12/16/2017",
+      "empty": "4/15/2018",
+      "abv": 8.4,
+      "status": "ontap",
+      "untappd": "https://untappd.com/b/what-to-brewery-graff-paper-scissors/2442611"
+    },
+    {
+      "tap": 3,
+      "name": "Plumamoos",
+      "style": "Specialty Fruit Beer",
+      "description": "Slightly sour plum ale.",
+      "kegged": "10/22/2017",
+      "empty": "2/19/2018",
+      "abv": 6.7,
+      "status": "ontap",
+      "untappd": "https://untappd.com/b/what-to-brewery-plumamoos-sour-plum-ale/2343518"
+    },
+    {
+      "name": "Multipurpose Space",
+      "style": "Dry Stout with Coffee",
+      "brewed": "10/1/2017",
+      "description": "This coffee stout draws people together, just like the Multipurpose Space at Assembly.",
+      "status": "kegged"
+    },
+    {
+      "name": "Miller's Cider",
+      "brewed": "11/11/2017",
+      "description": "Dry",
+      "status": "fermenting"
+    },
+    {
+      "name": "Ryebier White IPA",
+      "description": "Lots of hops and honey",
+      "brewed": "10/1/2017",
+      "status": "fermenting"
+    },
+    {
+      "name": "Golden Lager",
+      "description": "",
+      "brewed": "",
+      "status": "planned"
+    }
+  ]
+}

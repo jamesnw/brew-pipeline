@@ -1,0 +1,87 @@
+<template>
+  <v-flex md3 sm6 xs12 class="pa-1 mt-1">
+    <v-card :color="bgColor" class="white--text">
+      <div class="tap-name">{{batch.tap}}</div>
+      <v-card-title primary-title>
+        <div>
+          <div class="headline">{{name}}</div>
+          <span class="style-name">{{style}}</span>
+        </div>
+      </v-card-title>
+      <v-card-text>
+        <div>{{ batch.description}}</div>
+        <div v-if="abv"><strong>ABV:</strong> {{abv}}%</div>
+        <div v-if="status === 'ontap'"><strong>Remaining:</strong> {{ 100 - batchProgress }}%
+          <v-progress-linear
+            v-bind:size="100"
+            v-bind:width="25"
+            v-bind:value="batchProgress"
+            color="white"
+          />
+        </div>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn dark :color="buttonColor" target="_blank" :href="batch.untappd" v-show="batch.untappd">Check in</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-flex>
+</template>
+<script>
+export default {
+  name: 'on-tap-batch',
+  props: ['batch', 'index'],
+  data: function () {
+    return {
+      onTapColors: [
+        'red', 'pink', 'purple', 'deep-purple'
+      ],
+      upcomingColors: [
+        'light-green', 'lime', 'amber', 'orange', 'deep-orange'
+      ],
+      batchProgress: 0
+    }
+  },
+  computed: {
+    style: (data) => { return data.batch.style },
+    name: (data) => { return data.batch.name },
+    status: (data) => { return data.batch.status },
+    abv: (data) => { return data.batch.abv },
+    baseColor: function () {
+      if (this.status === 'ontap') {
+        return this.onTapColors[this.batch.tap - 1]
+      } else {
+        return this.upcomingColors[this.index]
+      }
+    },
+    bgColor: function () {
+      return this.baseColor + ' darken-2'
+    },
+    buttonColor: function () {
+      return this.baseColor + ' lighten-2'
+    }
+  },
+  mounted: function () {
+    var start = new Date(this.batch.kegged)
+    var end = new Date(this.batch.empty)
+    var days = end - start
+    var today = new Date()
+    var daysDrinking = today - start
+    var vm = this
+    setTimeout(function () {
+      vm.batchProgress = Math.round((daysDrinking / days) * 100)
+    }, 150 * this.batch.tap)
+  }
+}
+</script>
+<style>
+.tap-name{
+  position: absolute;
+  right: 0;
+  padding: 0 0.3em;
+  opacity: .5;
+  font-size: 2em;
+}
+.style-name{
+  font-style: italic;
+}
+</style>
