@@ -1,5 +1,5 @@
 {
-  "updated": "2017-12-30T15:21:34.951Z",
+  "updated": "2018-01-13T18:21:34.951Z",
   "beers": [
     {
       "tap": 1,
@@ -35,39 +35,45 @@
       "untappd": "https://untappd.com/b/what-to-brewery-graff-paper-scissors/2442611"
     },
     {
-      "tap": 3,
       "name": "Plumamoos",
       "style": "Specialty Fruit Beer",
       "description": "Slightly sour plum ale.",
       "kegged": "10/22/2017",
       "empty": "2/19/2018",
       "abv": 6.7,
-      "status": "ontap",
+      "status": "kicked",
       "untappd": "https://untappd.com/b/what-to-brewery-plumamoos-sour-plum-ale/2343518"
     },
     {
+      "tap": 3,
       "name": "Multipurpose Space",
       "style": "Dry Stout with Coffee",
       "brewed": "10/1/2017",
       "description": "This coffee stout draws people together, just like the Multipurpose Space at Assembly.",
-      "status": "kegged"
+      "status": "ontap",
+      "kegged": "7/1/2017",
+      "empty": "1/20/2018",
+      "untappd": "https://untappd.com/b/what-to-brewery-multipurpose-space/2153014"
     },
     {
       "name": "Miller's Cider",
+      "style": "New World Cider",
       "brewed": "11/11/2017",
-      "description": "Dry",
-      "status": "fermenting"
+      "description": "Dry cider made with cider from Miller's Cider",
+      "status": "fermenting",
+      "untappd": "https://untappd.com/b/what-to-brewery-miller-s-cider/969773"
     },
     {
       "name": "Ryebier White IPA",
-      "description": "Lots of hops and honey",
+      "style": "White IPA",
+      "description": "Lots of hops and honey. Amarillo, Citra and 007: Golden Hop",
       "brewed": "10/1/2017",
       "status": "fermenting"
     },
     {
       "name": "Golden Lager",
-      "description": "",
-      "brewed": "",
+      "style": "International Pale Lager",
+      "description": "Taking suggestions on additions. Perhaps will dry hop with Medusa hops.",
       "status": "planned"
     }
   ]
