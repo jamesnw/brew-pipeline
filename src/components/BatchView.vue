@@ -21,7 +21,8 @@
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn dark :color="buttonColor" target="_blank" :href="batch.untappd" v-show="batch.untappd">Check in</v-btn>
+        <v-btn dark class="hidden-sm-and-down" :color="buttonColor" target="_blank" :href="batch.untappd" v-show="batch.untappd">Check in</v-btn>
+        <v-btn dark class="hidden-md-and-up" :color="buttonColor" target="_blank" :href="untappdAppLink" v-show="untappdAppLink">Check in</v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>
@@ -46,6 +47,12 @@ export default {
     name: (data) => { return data.batch.name },
     status: (data) => { return data.batch.status },
     abv: (data) => { return data.batch.abv },
+    untappdAppLink: (data) => {
+      if (!data.batch.untappd) return ''
+      var parts = data.batch.untappd.split('/')
+      var number = parts.pop()
+      return 'untappd://beer/' + number
+    },
     baseColor: function () {
       if (this.status === 'ontap') {
         return this.onTapColors[this.batch.tap - 1]

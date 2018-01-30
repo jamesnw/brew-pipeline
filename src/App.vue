@@ -5,7 +5,7 @@
     </v-toolbar>
     <v-content>
       <v-container fluid grid-list-xs>
-        <h1 class="display-3 grey--text text--darken-1">On tap</h1>
+        <h1 class="display-3 grey--text text--darken-1 text-xs-center">On tap</h1>
         <v-layout row wrap>
           <batch-view
             v-for="batch in ontap"
@@ -13,7 +13,7 @@
             :batch="batch"
           />
         </v-layout>
-        <h1 class="display-3 grey--text text--darken-1">On deck</h1>
+        <h1 class="display-3 grey--text text--darken-1 text-xs-center">On deck</h1>
         <v-layout row wrap >
           <batch-view
             v-for="batch, i in upcoming"
@@ -22,7 +22,7 @@
             :batch="batch"
           />
         </v-layout>
-        <h2 class="display-1 grey--text text--darken-1 mt-2 pt-3">Recently kicked</h2>
+        <h2 class="display-1 grey--text text--darken-1 mt-2 pt-3 text-xs-center">Recently kicked</h2>
         <v-layout class="ml-1">
           <ul>
             <li v-for="batch,i in kicked" :key="i">
