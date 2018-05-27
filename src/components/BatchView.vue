@@ -11,7 +11,7 @@
       <v-card-text>
         <div>{{ batch.description}}</div>
         <div v-if="abv"><strong>ABV:</strong> {{abv}}%</div>
-        <div v-if="status === 'ontap'"><strong>Remaining:</strong> {{ 100 - batchProgress }}%
+        <div v-if="status === 'ontap'"><strong>Remaining:</strong> {{remaining}}
           <v-progress-linear
             v-bind:size="100"
             v-bind:width="25"
@@ -33,21 +33,25 @@ export default {
   props: ['batch', 'index'],
   data: function () {
     return {
-      onTapColors: [
-        'red', 'pink', 'purple', 'deep-purple'
-      ],
-      upcomingColors: [
-        'light-green', 'lime', 'amber', 'orange', 'deep-orange'
-      ],
+      onTapColors: ['red', 'pink', 'purple', 'deep-purple'],
+      upcomingColors: ['light-green', 'lime', 'amber', 'orange', 'deep-orange'],
       batchProgress: 0
     }
   },
   computed: {
-    style: (data) => { return data.batch.style },
-    name: (data) => { return data.batch.name },
-    status: (data) => { return data.batch.status },
-    abv: (data) => { return data.batch.abv },
-    untappdAppLink: (data) => {
+    style: data => {
+      return data.batch.style
+    },
+    name: data => {
+      return data.batch.name
+    },
+    status: data => {
+      return data.batch.status
+    },
+    abv: data => {
+      return data.batch.abv
+    },
+    untappdAppLink: data => {
       if (!data.batch.untappd) return ''
       var parts = data.batch.untappd.split('/')
       var number = parts.pop()
@@ -65,6 +69,11 @@ export default {
     },
     buttonColor: function () {
       return this.baseColor + ' lighten-2'
+    },
+    remaining: data => {
+      if (data.batchProgress >= 100) return 'Kicked any day now...'
+      else if (isNaN(data.batchProgress)) return 'Who knows?'
+      else return 100 - data.batchProgress + '%'
     }
   },
   mounted: function () {
@@ -75,20 +84,20 @@ export default {
     var daysDrinking = today - start
     var vm = this
     setTimeout(function () {
-      vm.batchProgress = Math.round((daysDrinking / days) * 100)
+      vm.batchProgress = Math.round(daysDrinking / days * 100)
     }, 150 * this.batch.tap)
   }
 }
 </script>
 <style>
-.tap-name{
+.tap-name {
   position: absolute;
   right: 0;
   padding: 0 0.3em;
-  opacity: .5;
+  opacity: 0.5;
   font-size: 2em;
 }
-.style-name{
+.style-name {
   font-style: italic;
 }
 </style>

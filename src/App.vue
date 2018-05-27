@@ -53,7 +53,7 @@
         kicked: [],
         updated: '',
         copyright: new Date().getFullYear(),
-        url: '/static/pipeline.json'
+        url: 'http://up.jamesnweber.com/_kegs/api/model.php'
       }
     },
     created: function () {

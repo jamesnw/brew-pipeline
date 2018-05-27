@@ -1,16 +1,26 @@
 {
-  "updated": "2018-01-13T18:21:34.951Z",
+  "updated": "2018-01-21T14:49:34.951Z",
   "beers": [
     {
-      "tap": 1,
       "name": "Not a Tractor IPA",
       "style": "New England IPA",
       "description": "If it\"s not green, it\"s not a tractor. Hops: Grungeist (Green Ghost), Polaris, Celeia, Simcoe, Mosaic",
       "kegged": "10/1/2017",
-      "empty": "1/29/2018",
+      "empty": "1/15/2018",
       "abv": 5.4,
-      "status": "ontap",
+      "status": "kicked",
       "untappd": "https://untappd.com/b/what-to-brewery-not-a-tractor/2355202"
+    },
+    {
+      "tap": 1,
+      "name": "nothingless",
+      "style": "American IPA",
+      "description": "As in, 'My hop is built on...' Smells like cantaloupe. Lots of hops and honey. Rye and wheat. Amarillo, Citra and 007: Golden Hop.",
+      "kegged": "1/15/2018",
+      "empty": "3/29/2018",
+      "abv": 8.6,
+      "status": "ontap",
+      "untappd": "https://untappd.com/b/what-to-brewery-nothingless/2476618"
     },
     {
       "tap": 2,
@@ -52,7 +62,7 @@
       "description": "This coffee stout draws people together, just like the Multipurpose Space at Assembly.",
       "status": "ontap",
       "kegged": "7/1/2017",
-      "empty": "1/20/2018",
+      "empty": "2/10/2018",
       "untappd": "https://untappd.com/b/what-to-brewery-multipurpose-space/2153014"
     },
     {
@@ -62,13 +72,6 @@
       "description": "Dry cider made with cider from Miller's Cider",
       "status": "fermenting",
       "untappd": "https://untappd.com/b/what-to-brewery-miller-s-cider/969773"
-    },
-    {
-      "name": "Ryebier White IPA",
-      "style": "White IPA",
-      "description": "Lots of hops and honey. Amarillo, Citra and 007: Golden Hop",
-      "brewed": "10/1/2017",
-      "status": "fermenting"
     },
     {
       "name": "Golden Lager",
