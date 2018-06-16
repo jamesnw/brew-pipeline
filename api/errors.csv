@@ -1,0 +1,74 @@
+"27 May 2018 18:19:14","/homepages/17/d220147876/htdocs/_kegs/api/model.php: 
+  12","() strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'America/New_York' for 'EDT/-4.0/DST' instead"
+"27 May 2018 18:21:52","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:21:52","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:03","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:03","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:15","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:15","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:23","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:23","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:31","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:31","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:40","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:40","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:46","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:46","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:22:52","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:22:52","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:23:00","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:23:00","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:23:07","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  36","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:23:07","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  40","(Notice) Undefined offset: 0"
+"27 May 2018 18:30:29","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  48","(Notice) Undefined index: id"
+"27 May 2018 18:30:41","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  48","(Notice) Undefined index: id"
+"27 May 2018 18:30:47","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:30:47","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"27 May 2018 18:44:13","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:44:13","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"27 May 2018 18:45:06","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:45:06","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"27 May 2018 18:46:19","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"27 May 2018 18:46:19","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"30 May 2018 19:53:47","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"30 May 2018 19:53:47","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"30 May 2018 19:54:23","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"30 May 2018 19:54:23","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
+"30 May 2018 20:08:29","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  67","(Warning) mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given"
+"30 May 2018 20:08:29","/homepages/17/d220147876/htdocs/_kegs/api/keg.php: 
+  71","(Notice) Undefined offset: 0"
