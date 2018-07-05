@@ -1,5 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+
 include('globals.php');
 $method = $_SERVER['REQUEST_METHOD'];
 $url = $_SERVER['SCRIPT_URL'];
@@ -17,10 +20,9 @@ if(strpos($url, '/keg.php') !== FALSE){
 		if(!$keg){
 			die('Invalid keg');
 		}
-		print_r($keg);
+
 		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		$keg_safe =  $conn->real_escape_string(json_encode($keg));
-		print_r($keg_safe);
 	
 		$sql = 'INSERT INTO kegs (`keg_data`) VALUES ("%s")';
 		$sql = sprintf($sql, $keg_safe);
@@ -29,15 +31,13 @@ if(strpos($url, '/keg.php') !== FALSE){
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
-		print(PHP_EOL);
-		print($sql);
+
 		$result = $conn->query($sql) or die(mysqli_error($conn));
-		$rows = array();
-		while($r = mysqli_fetch_assoc($result)) {
-				$rows[] = $r;
-		}
-		print_r($result);
-		return json_encode($rows[0]);
+
+		$return = [
+			'id' => $conn->insert_id,
+			];
+		print json_encode($return);
 	}
 
 	if($method === 'PUT'){
@@ -90,7 +90,7 @@ if(strpos($url, '/keg.php') !== FALSE){
 				$rows[] = $r;
 		}
 		print_r($result);
-		return json_encode($rows[0]);
+// 		return json_encode($rows[0]);
 	}
 }
 function getKeg($id = NULL){
