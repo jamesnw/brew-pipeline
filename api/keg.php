@@ -1,13 +1,28 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, Kegauthorization');
 
-include('globals.php');
+// include('globals.php');
+include('password.php');
 $method = $_SERVER['REQUEST_METHOD'];
 $url = $_SERVER['SCRIPT_URL'];
 
 if(strpos($url, '/keg.php') !== FALSE){
+	if($method === 'OPTIONS'){
+		return;
+	}
+	$headers = apache_request_headers();
+	$password_to_check = $headers['Kegauthorization'];
+	$valid = checkPassword($password_to_check);
+	if($valid){
+		http_response_code(200);
+	} else {
+		http_response_code(401);
+		print json_encode(['UnauthorizedError' => 'Unauthorized']);
+		return;
+	}
+
 	if($method === 'GET'){
 		$id = NULL;
 		if(isset($_GET['id'])){
