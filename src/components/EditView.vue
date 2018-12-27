@@ -23,6 +23,7 @@ import KegForm from './KegForm';
 
 export default {
   components: { KegForm },
+  props: ['headers'],
   data: function() {
     return {
       id: undefined,
@@ -58,7 +59,7 @@ export default {
     load: function() {
       var vm = this;
       vm.id = this.$route.params.beer;
-      axios.get(vm.url).then(function(res) {
+      axios.get(vm.url, vm.headers).then(function(res) {
         vm.beer = res.data;
         vm.setKeg(vm.beer);
       });
@@ -71,7 +72,7 @@ export default {
         keg_data: data
       };
       axios
-        .put(this.url, data)
+        .put(this.url, data, vm.headers)
         .then(function(data) {
           vm.saving = false;
           vm.showSuccess = true;
@@ -85,7 +86,7 @@ export default {
     },
     deleteKeg: function() {
       var vm = this;
-      axios.delete(this.url).then(function(res) {
+      axios.delete(this.url, vm.headers).then(function(res) {
         vm.showDeleteSuccess = true;
         vm.$emit('loadBeers');
         setTimeout(function() {
