@@ -1,7 +1,7 @@
 <template>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field v-model="name" label="Name" required ></v-text-field>
-      <v-text-field v-model="abv" label="ABV"></v-text-field>
+      <v-text-field v-model="abv" label="ABV" :rules="[rules.percent]"></v-text-field>
       <v-text-field v-model="description" label="Description" required></v-text-field>
       <v-text-field v-model="empty" label="empty"></v-text-field>
       <v-text-field v-model="kegged" label="kegged"></v-text-field>
@@ -92,7 +92,10 @@ export default {
         { text: 'Fermenting', value: 'fermenting' },
         { text: 'Planned', value: 'planned' },
         { text: 'Kegged', value: 'kegged' }
-      ]
+      ],
+      rules: {
+        percent: value => !value.includes('%') || 'Remove % sign'
+      }
     };
   },
   props: ['kegData'],
