@@ -23,12 +23,8 @@
           />
         </v-layout>
         <h2 class="display-1 grey--text text--darken-1 mt-2 pt-3 text-xs-center">Recently kicked</h2>
-        <v-layout class="ml-1">
-          <ul>
-            <li v-for="(batch,i) in kicked" :key="i">
-              <strong>{{batch.name}}</strong> <em>{{batch.style}}</em>
-            </li>
-          </ul>
+        <v-layout class="ml-1"  wrap>
+            <kicked-view v-for="(batch,i) in sortedKicked" :key="i" :batch="batch" />
         </v-layout>
       </v-container>
        <v-footer fixed app>
@@ -42,6 +38,7 @@
 
 <script>
 import BatchView from './components/BatchView';
+import KickedView from './components/KickedView';
 import axios from 'axios';
 
 export default {
@@ -79,8 +76,18 @@ export default {
       vm.updated = y.toLocaleString();
     });
   },
+  computed: {
+    sortedKicked(){
+      return this.kicked.sort((a,b)=>{
+        let aD = new Date(a.empty);
+        let bD = new Date(b.empty);
+        return aD > bD ? -1 : 1;
+      });
+    }
+  },
   components: {
-    BatchView
+    BatchView,
+    KickedView
   }
 };
 </script>
