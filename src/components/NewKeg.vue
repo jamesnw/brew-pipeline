@@ -18,6 +18,7 @@ import KegForm from './KegForm';
 import axios from 'axios';
 export default {
   components: { KegForm },
+  props: ['headers'],
   data: function() {
     return {
       saving: false,
@@ -29,7 +30,7 @@ export default {
     save: function(data) {
       var vm = this;
       axios
-        .post(this.url, data)
+        .post(this.url, data, vm.headers)
         .then(function(res) {
           vm.showSuccess = true;
           vm.$emit('loadBeers');

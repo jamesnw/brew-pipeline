@@ -94,7 +94,7 @@ export default {
         { text: 'Kegged', value: 'kegged' }
       ],
       rules: {
-        percent: value => !value.includes('%') || 'Remove % sign'
+        percent: value => (!value || !value.includes('%')) || 'Remove % sign'
       }
     };
   },
