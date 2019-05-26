@@ -1,63 +1,38 @@
 <template>
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field v-model="name" label="Name" required ></v-text-field>
-      <v-text-field v-model="abv" label="ABV" :rules="[rules.percent]"></v-text-field>
-      <v-text-field v-model="description" label="Description" required></v-text-field>
-      <v-text-field v-model="empty" label="empty"></v-text-field>
-      <v-text-field v-model="kegged" label="kegged"></v-text-field>
-      <v-select v-model="status" :items="statusOptions" label="Status"></v-select>
-      <v-text-field v-model="style" label="style" required></v-text-field>
-      <v-select v-model="tap" :items="tapOptions" label="tap"></v-select>
-      <v-text-field v-model="untappd" label="untappd"></v-text-field>
-      <v-btn color="success"
-        @click="save"
-        :loading="saving"
-        :disabled="saving"
-      >Save</v-btn>
-      <v-btn color="warning" @click="reset">Reset</v-btn>
-      <v-dialog v-model="showDelete" width="500" v-show="name">
-        <v-btn
-        slot="activator"
-        color="red lighten-2"
-        dark
-        @click="showDelete=true"
-      >
-        Delete
-      </v-btn>
+  <v-form ref="form" v-model="valid" lazy-validation>
+    <v-text-field v-model="name" label="Name" required></v-text-field>
+    <v-text-field v-model="abv" label="ABV" :rules="[rules.percent]"></v-text-field>
+    <v-text-field v-model="description" label="Description" required></v-text-field>
+    <v-text-field v-model="empty" label="empty"></v-text-field>
+    <v-text-field v-model="kegged" label="kegged"></v-text-field>
+    <v-select v-model="status" :items="statusOptions" label="Status"></v-select>
+    <v-text-field v-model="style" label="style" required></v-text-field>
+    <v-select v-model="tap" :items="tapOptions" label="tap"></v-select>
+    <v-text-field v-model="untappd" label="untappd"></v-text-field>
+    <v-btn color="success" @click="save" :loading="saving" :disabled="saving">Save</v-btn>
+    <v-btn color="warning" @click="reset">Reset</v-btn>
+    <v-dialog v-model="showDelete" persistent width="500" v-show="name">
+      <template v-slot:activator="{on}">
+        <v-btn color="red lighten-2" dark v-on="on">Delete</v-btn>
+      </template>
       <v-card>
-        <v-card-title
-          class="headline grey lighten-1"
-          primary-title
-        >
-          Delete
-        </v-card-title>
+        <v-card-title class="headline grey lighten-1" primary-title>Delete</v-card-title>
 
         <v-card-text>
-          Are you sure you want to delete <strong>{{name}}</strong>?
+          Are you sure you want to delete
+          <strong>{{name}}</strong>?
         </v-card-text>
 
         <v-divider></v-divider>
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            flat
-            @click="showDelete = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            color="red lighten-1"
-            dark
-            @click="deleteKeg"
-          >
-            Delete
-          </v-btn>
+          <v-btn color="primary" flat @click="showDelete = false">Cancel</v-btn>
+          <v-btn color="red lighten-1" dark @click="deleteKeg">Delete</v-btn>
         </v-card-actions>
       </v-card>
-      </v-dialog>
-    </v-form>
+    </v-dialog>
+  </v-form>
 </template>
 
 <script>
@@ -84,7 +59,9 @@ export default {
         { text: '1', value: 1 },
         { text: '2', value: 2 },
         { text: '3', value: 3 },
-        { text: '4', value: 4 }
+        { text: '4', value: 4 },
+        { text: '5', value: 5 },
+        { text: '6', value: 6 }
       ],
       statusOptions: [
         { text: 'On tap', value: 'ontap' },
@@ -94,7 +71,7 @@ export default {
         { text: 'Kegged', value: 'kegged' }
       ],
       rules: {
-        percent: value => (!value || !value.includes('%')) || 'Remove % sign'
+        percent: value => !value || !value.includes('%') || 'Remove % sign'
       }
     };
   },
@@ -141,8 +118,7 @@ export default {
       this.untappd = beer.untappd;
     }
   }
-};
-</script>
+};</script>
 
 <style>
 </style>

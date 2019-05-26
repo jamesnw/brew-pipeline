@@ -1,5 +1,5 @@
 <template>
-  <v-flex md3 sm6 xs12 class="pa-1 mt-1">
+  <v-flex md4 sm6 xs12 class="pa-1 mt-1">
     <v-card :color="bgColor" class="white--text">
       <div class="tap-name">{{batch.tap}}</div>
       <v-card-title primary-title>
@@ -10,8 +10,13 @@
       </v-card-title>
       <v-card-text>
         <div>{{ batch.description}}</div>
-        <div v-if="abv"><strong>ABV:</strong> {{abv}}%</div>
-        <div v-if="batchProgress"><strong>Remaining:</strong> {{remaining}}
+        <div v-if="abv">
+          <strong>ABV:</strong>
+          {{abv}}%
+        </div>
+        <div v-if="batchProgress">
+          <strong>Remaining:</strong>
+          {{remaining}}
           <v-progress-linear
             v-bind:size="100"
             v-bind:width="25"
@@ -21,8 +26,22 @@
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn dark class="hidden-sm-and-down" :color="buttonColor" target="_blank" :href="batch.untappd" v-show="batch.untappd">Check in</v-btn>
-        <v-btn dark class="hidden-md-and-up" :color="buttonColor" target="_blank" :href="untappdAppLink" v-show="untappdAppLink">Check in</v-btn>
+        <v-btn
+          dark
+          class="hidden-sm-and-down"
+          :color="buttonColor"
+          target="_blank"
+          :href="batch.untappd"
+          v-show="batch.untappd"
+        >Check in</v-btn>
+        <v-btn
+          dark
+          class="hidden-md-and-up"
+          :color="buttonColor"
+          target="_blank"
+          :href="untappdAppLink"
+          v-show="untappdAppLink"
+        >Check in</v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>
@@ -33,7 +52,7 @@ export default {
   props: ['batch', 'index'],
   data: function() {
     return {
-      onTapColors: ['red', 'pink', 'purple', 'deep-purple'],
+      onTapColors: ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue'],
       upcomingColors: ['light-green', 'lime', 'amber', 'orange', 'deep-orange'],
       batchProgress: 0
     };
@@ -87,8 +106,7 @@ export default {
       vm.batchProgress = Math.round(daysDrinking / days * 100);
     }, 150 * this.batch.tap);
   }
-};
-</script>
+};</script>
 <style>
 .tap-name {
   position: absolute;

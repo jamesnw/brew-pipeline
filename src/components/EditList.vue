@@ -80,12 +80,19 @@ export default {
     },
     icon: function(tap) {
       if (!tap) return;
-      var icons = ['', 'looks_one', 'looks_two', 'looks_3', 'looks_4'];
+      var icons = [
+        '',
+        'looks_one',
+        'looks_two',
+        'looks_3',
+        'looks_4',
+        'looks_5',
+        'looks_6'
+      ];
       return icons[tap];
     }
   }
-};
-</script>
+};</script>
 
 <style>
 </style>

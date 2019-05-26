@@ -4,6 +4,7 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn flat to="/">Home</v-btn>
         <login-view @updatePassword="updatePassword"/>
       </v-toolbar-items>
     </v-toolbar>
@@ -83,8 +84,7 @@ export default {
       this.loadBeers();
     }
   }
-};
-</script>
+};</script>
 
 <style scoped>
 </style>
