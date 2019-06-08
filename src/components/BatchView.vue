@@ -50,63 +50,63 @@
 export default {
   name: 'on-tap-batch',
   props: ['batch', 'index'],
-  data: function() {
+  data: function () {
     return {
       onTapColors: ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue'],
       upcomingColors: ['light-green', 'lime', 'amber', 'orange', 'deep-orange'],
       batchProgress: 0
-    };
+    }
   },
   computed: {
     style: data => {
-      return data.batch.style;
+      return data.batch.style
     },
     name: data => {
-      return data.batch.name;
+      return data.batch.name
     },
     status: data => {
-      return data.batch.status;
+      return data.batch.status
     },
     abv: data => {
-      return data.batch.abv;
+      return data.batch.abv
     },
     untappdAppLink: data => {
-      if (!data.batch.untappd) return '';
-      var parts = data.batch.untappd.split('/');
-      var number = parts.pop();
-      return 'untappd://beer/' + number;
+      if (!data.batch.untappd) return ''
+      var parts = data.batch.untappd.split('/')
+      var number = parts.pop()
+      return 'untappd://beer/' + number
     },
-    baseColor: function() {
+    baseColor: function () {
       if (this.status === 'ontap') {
-        return this.onTapColors[this.batch.tap - 1];
+        return this.onTapColors[this.batch.tap - 1]
       } else {
-        return this.upcomingColors[this.index];
+        return this.upcomingColors[this.index]
       }
     },
-    bgColor: function() {
-      return this.baseColor + ' darken-2';
+    bgColor: function () {
+      return this.baseColor + ' darken-2'
     },
-    buttonColor: function() {
-      return this.baseColor + ' lighten-2';
+    buttonColor: function () {
+      return this.baseColor + ' lighten-2'
     },
     remaining: data => {
-      if (data.batchProgress >= 100) return 'Kicked any day now...';
-      else if (isNaN(data.batchProgress)) return 'Who knows?';
-      else return 100 - data.batchProgress + '%';
+      if (data.batchProgress >= 100) return 'Kicked any day now...'
+      else if (isNaN(data.batchProgress)) return 'Who knows?'
+      else return 100 - data.batchProgress + '%'
     }
   },
-  mounted: function() {
-    var start = new Date(this.batch.kegged);
-    var end = new Date(this.batch.empty);
-    var days = end - start;
-    var today = new Date();
-    var daysDrinking = today - start;
-    var vm = this;
-    setTimeout(function() {
-      vm.batchProgress = Math.round(daysDrinking / days * 100);
-    }, 150 * this.batch.tap);
+  mounted: function () {
+    var start = new Date(this.batch.kegged)
+    var end = new Date(this.batch.empty)
+    var days = end - start
+    var today = new Date()
+    var daysDrinking = today - start
+    var vm = this
+    setTimeout(function () {
+      vm.batchProgress = Math.round(daysDrinking / days * 100)
+    }, 150 * this.batch.tap)
   }
-};</script>
+}; </script>
 <style>
 .tap-name {
   position: absolute;

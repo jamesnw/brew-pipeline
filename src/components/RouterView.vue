@@ -5,9 +5,9 @@
 </template>
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       title: 'What to brew'
-    };
+    }
   }
-};</script>
+}; </script>

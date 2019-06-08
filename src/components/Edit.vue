@@ -34,10 +34,9 @@
 </template>
 
 <script>
-import axios from 'axios';
-import EditList from './EditList';
-import EditView from './EditView';
-import LoginView from './LoginView';
+import axios from 'axios'
+import EditList from './EditList'
+import LoginView from './LoginView'
 export default {
   data: () => {
     return {
@@ -47,44 +46,45 @@ export default {
       password: '',
       wrongPassword: false,
       url: 'http://up.jamesnweber.com/_kegs/api/keg.php'
-    };
+    }
   },
-  components: { EditList, EditView, LoginView },
-  created: function() {
-    this.loadBeers();
+  components: { EditList, LoginView },
+  created: function () {
+    this.loadBeers()
   },
   computed: {
-    selectedBeer: function() {
-      if (this.selected >= 0) return this.beers[this.selected];
+    selectedBeer: function () {
+      if (this.selected >= 0) return this.beers[this.selected]
+      else return {}
     },
-    headers() {
-      return { headers: { KegAuthorization: this.password } };
+    headers () {
+      return { headers: { KegAuthorization: this.password } }
     }
   },
   methods: {
-    select: function(beer) {
-      this.selected = beer;
+    select: function (beer) {
+      this.selected = beer
     },
-    loadBeers: function() {
-      var vm = this;
+    loadBeers: function () {
+      var vm = this
       axios
         .get(vm.url, vm.headers)
-        .then(function(res) {
-          vm.beers = res.data;
+        .then(function (res) {
+          vm.beers = res.data
         })
-        .catch(function(error) {
+        .catch(function (error) {
           if (error.response.status === 401) {
-            vm.wrongPassword = true;
+            vm.wrongPassword = true
           }
-        });
+        })
     },
-    updatePassword(val) {
-      this.password = val;
-      this.wrongPassword = false;
-      this.loadBeers();
+    updatePassword (val) {
+      this.password = val
+      this.wrongPassword = false
+      this.loadBeers()
     }
   }
-};</script>
+}; </script>
 
 <style scoped>
 </style>

@@ -13,21 +13,21 @@ export default {
   props: ['batch'],
   computed: {
     untappdAppLink: data => {
-      if (!data.batch.untappd) return '';
-      var parts = data.batch.untappd.split('/');
-      var number = parts.pop();
-      return 'untappd://beer/' + number;
+      if (!data.batch.untappd) return ''
+      var parts = data.batch.untappd.split('/')
+      var number = parts.pop()
+      return 'untappd://beer/' + number
     }
   },
   methods: {
-    openUntappd() {
+    openUntappd () {
       let link = this.$vuetify.breakpoint.smAndDown
         ? this.untappdAppLink
-        : this.batch.untappd;
-      window.open(link, '_blank');
+        : this.batch.untappd
+      window.open(link, '_blank')
     }
   }
-};
+}
 </script>
 
 <style>

@@ -35,51 +35,50 @@
 <script>
 export default {
   props: ['beers'],
-  data: function() {
+  data: function () {
     return {
       filterOnTap: false,
       search: ''
-    };
+    }
   },
   computed: {
-    beerList: function() {
-      var list = this.beers;
-      var search = this.search.toLowerCase();
+    beerList: function () {
+      var list = this.beers
+      var search = this.search.toLowerCase()
       if (search.length) {
         list = list.filter(item => {
-          let haystack = item.keg_data.name + item.keg_data.style;
-          haystack = haystack.toLowerCase();
-          return haystack.indexOf(search) >= 0;
-        });
+          let haystack = item.keg_data.name + item.keg_data.style
+          haystack = haystack.toLowerCase()
+          return haystack.indexOf(search) >= 0
+        })
       }
       list = list.sort((a, b) => {
         // First sort by on tap
-        var aT = parseInt(a.keg_data.tap) || 50;
-        var bT = parseInt(b.keg_data.tap) || 50;
-        if (aT !== 50 || bT !== 50) {
-          return aT <= bT ? -1 : 1;
-        }
+        var aT = parseInt(a.keg_data.tap) || 50
+        var bT = parseInt(b.keg_data.tap) || 50
+        // eslint-disable-next-line brace-style
+        if (aT !== 50 || bT !== 50) { return aT <= bT ? -1 : 1 }
         // Then sort by updated
         else {
-          var aU = new Date(a.updated) || new Date(0);
-          var bU = new Date(b.updated) || new Date(0);
-          return aU <= bU ? -1 : 1;
+          var aU = new Date(a.updated) || new Date(0)
+          var bU = new Date(b.updated) || new Date(0)
+          return aU <= bU ? -1 : 1
         }
-      });
-      if (this.filterOnTap) return list.filter(b => b.keg_data.tap);
-      return list;
+      })
+      if (this.filterOnTap) return list.filter(b => b.keg_data.tap)
+      return list
     }
   },
   methods: {
-    selected: function(data) {
-      var path = '/edit/' + data;
-      this.$router.push({ path });
+    selected: function (data) {
+      var path = '/edit/' + data
+      this.$router.push({ path })
     },
-    isSelected: function(data) {
-      return data === this.$route.params.beer;
+    isSelected: function (data) {
+      return data === this.$route.params.beer
     },
-    icon: function(tap) {
-      if (!tap) return;
+    icon: function (tap) {
+      if (!tap) return
       var icons = [
         '',
         'looks_one',
@@ -88,11 +87,11 @@ export default {
         'looks_4',
         'looks_5',
         'looks_6'
-      ];
-      return icons[tap];
+      ]
+      return icons[tap]
     }
   }
-};</script>
+}; </script>
 
 <style>
 </style>

@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       id: undefined,
       name: undefined,
@@ -73,20 +73,20 @@ export default {
       rules: {
         percent: value => !value || !value.includes('%') || 'Remove % sign'
       }
-    };
+    }
   },
   props: ['kegData'],
   watch: {
-    kegData: function(beer) {
-      this.setKeg(beer);
+    kegData: function (beer) {
+      this.setKeg(beer)
     }
   },
-  created: function() {
-    this.setKeg(this.kegData);
+  created: function () {
+    this.setKeg(this.kegData)
   },
   methods: {
-    save: function() {
-      var keg_data = {
+    save: function () {
+      var kegData = {
         name: this.name,
         abv: this.abv,
         description: this.description,
@@ -96,29 +96,29 @@ export default {
         style: this.style,
         tap: this.tap,
         untappd: this.untappd
-      };
-      this.$emit('save', keg_data);
+      }
+      this.$emit('save', kegData)
     },
-    reset: function() {
-      this.setKeg(this.kegData);
+    reset: function () {
+      this.setKeg(this.kegData)
     },
-    deleteKeg: function() {
-      this.showDelete = false;
-      this.$emit('delete');
+    deleteKeg: function () {
+      this.showDelete = false
+      this.$emit('delete')
     },
-    setKeg: function(beer) {
-      this.name = beer.name;
-      this.abv = beer.abv;
-      this.description = beer.description;
-      this.empty = beer.empty;
-      this.kegged = beer.kegged;
-      this.status = beer.status;
-      this.style = beer.style;
-      this.tap = beer.tap;
-      this.untappd = beer.untappd;
+    setKeg: function (beer) {
+      this.name = beer.name
+      this.abv = beer.abv
+      this.description = beer.description
+      this.empty = beer.empty
+      this.kegged = beer.kegged
+      this.status = beer.status
+      this.style = beer.style
+      this.tap = beer.tap
+      this.untappd = beer.untappd
     }
   }
-};</script>
+}; </script>
 
 <style>
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1>New beer</h1>
-    <keg-form 
+    <keg-form
       :kegData="{}"
       v-on:save="save"
     />
@@ -14,39 +14,39 @@
 </template>
 
 <script>
-import KegForm from './KegForm';
-import axios from 'axios';
+import KegForm from './KegForm'
+import axios from 'axios'
 export default {
   components: { KegForm },
   props: ['headers'],
-  data: function() {
+  data: function () {
     return {
       saving: false,
       showSuccess: false,
       url: 'http://up.jamesnweber.com/_kegs/api/keg.php'
-    };
+    }
   },
   methods: {
-    save: function(data) {
-      var vm = this;
+    save: function (data) {
+      var vm = this
       axios
         .post(this.url, data, vm.headers)
-        .then(function(res) {
-          vm.showSuccess = true;
-          vm.$emit('loadBeers');
+        .then(function (res) {
+          vm.showSuccess = true
+          vm.$emit('loadBeers')
           if (res.data.id) {
-            vm.$router.push('/edit/' + res.data.id);
+            vm.$router.push('/edit/' + res.data.id)
           }
-          setTimeout(function() {
-            vm.showSuccess = false;
-          }, 3000);
+          setTimeout(function () {
+            vm.showSuccess = false
+          }, 3000)
         })
-        .catch(function(error) {
-          console.log(error);
-        });
+        .catch(function (error) {
+          console.log(error)
+        })
     }
   }
-};
+}
 </script>
 
 <style>

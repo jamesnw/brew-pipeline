@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import BatchView from './components/BatchView';
-import KickedView from './components/KickedView';
-import axios from 'axios';
+import BatchView from './components/BatchView'
+import KickedView from './components/KickedView'
+import axios from 'axios'
 
 export default {
-  data() {
+  data () {
     return {
       title: 'What to Brewery Pipeline',
       ontap: [],
@@ -51,43 +51,43 @@ export default {
       updated: '',
       copyright: new Date().getFullYear(),
       url: 'http://up.jamesnweber.com/_kegs/api/model.php'
-    };
+    }
   },
-  created: function() {
-    var vm = this;
-    axios.get(vm.url).then(function(res) {
-      var beers = res.data.beers;
+  created: function () {
+    var vm = this
+    axios.get(vm.url).then(function (res) {
+      var beers = res.data.beers
       vm.ontap = beers
-        .filter(function(o) {
-          return o.status === 'ontap';
+        .filter(function (o) {
+          return o.status === 'ontap'
         })
-        .sort(function(o, p) {
-          return o.tap > p.tap ? 1 : -1;
-        });
-      vm.upcoming = beers.filter(function(o) {
-        var upcoming = ['fermenting', 'planned', 'kegged'];
-        return upcoming.includes(o.status);
-      });
-      vm.kicked = beers.filter(function(o) {
-        return ['kicked'].includes(o.status);
-      });
+        .sort(function (o, p) {
+          return o.tap > p.tap ? 1 : -1
+        })
+      vm.upcoming = beers.filter(function (o) {
+        var upcoming = ['fermenting', 'planned', 'kegged']
+        return upcoming.includes(o.status)
+      })
+      vm.kicked = beers.filter(function (o) {
+        return ['kicked'].includes(o.status)
+      })
 
-      var y = new Date(res.data.updated);
-      vm.updated = y.toLocaleString();
-    });
+      var y = new Date(res.data.updated)
+      vm.updated = y.toLocaleString()
+    })
   },
   computed: {
-    sortedKicked(){
-      return this.kicked.sort((a,b)=>{
-        let aD = new Date(a.empty);
-        let bD = new Date(b.empty);
-        return aD > bD ? -1 : 1;
-      });
+    sortedKicked () {
+      return this.kicked.concat().sort((a, b) => {
+        let aD = new Date(a.empty)
+        let bD = new Date(b.empty)
+        return aD > bD ? -1 : 1
+      })
     }
   },
   components: {
     BatchView,
     KickedView
   }
-};
+}
 </script>

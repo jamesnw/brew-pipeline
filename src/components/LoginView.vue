@@ -23,16 +23,16 @@
 
 <script>
 export default {
-  data() {
-    return { password: '', menu: false };
+  data () {
+    return { password: '', menu: false }
   },
   methods: {
-      updatePassword(val){
-          this.menu = false;
-          this.$emit('updatePassword', this.password)
-      }
+    updatePassword (val) {
+      this.menu = false
+      this.$emit('updatePassword', this.password)
+    }
   }
-};
+}
 </script>
 
 <style>
