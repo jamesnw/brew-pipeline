@@ -4,10 +4,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
 import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.css'
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import RouterView from './components/RouterView'
 Vue.use(VueRouter)
-Vue.use(Vuetify)
+Vue.use(Vuetify, { iconfont: 'md' })
 
 Vue.config.productionTip = false
 
