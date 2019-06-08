@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-toolbar fixed app dark color='primary'>
+  <v-toolbar fixed app dark color='purple darken-3'>
     <v-toolbar-title v-text="title"></v-toolbar-title>
   </v-toolbar>
   <v-content>
