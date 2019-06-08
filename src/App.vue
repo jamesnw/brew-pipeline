@@ -38,7 +38,7 @@
 
 <script>
 import BatchView from './components/BatchView'
-import KickedView from './components/TheKickedView'
+import KickedView from './components/KickedView'
 import axios from 'axios'
 
 export default {
