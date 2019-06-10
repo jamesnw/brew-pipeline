@@ -3,7 +3,7 @@
   <v-toolbar fixed app dark color='purple darken-3'>
     <v-toolbar-title v-text="title"></v-toolbar-title>
   </v-toolbar>
-  <v-content>
+  <v-content dark>
       <v-container fluid grid-list-xs>
         <h1 class="display-3 grey--text text--darken-1 text-xs-center">On tap</h1>
         <v-layout row wrap>
