@@ -57,13 +57,26 @@ export default {
     var vm = this
     axios.get(vm.url).then(function (res) {
       var beers = res.data.beers
-      vm.ontap = beers
+      var ontap = beers
         .filter(function (o) {
           return o.status === 'ontap'
         })
         .sort(function (o, p) {
           return o.tap > p.tap ? 1 : -1
         })
+      let result = [...Array(6).keys()]
+      result = result.map(i => {
+        i = i + 1
+        let tap = ontap.filter(x => x.tap === i)
+        if (tap.length === 0) {
+          return { tap: i, status: 'empty' }
+        } else if (tap.length === 1) {
+          return tap[0]
+        } else {
+          throw new Error('Double tap!')
+        }
+      })
+      vm.ontap = result
       vm.upcoming = beers.filter(function (o) {
         var upcoming = ['fermenting', 'planned', 'kegged']
         return upcoming.includes(o.status)

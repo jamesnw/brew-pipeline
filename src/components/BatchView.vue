@@ -54,6 +54,7 @@ export default {
     return {
       onTapColors: ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue'],
       upcomingColors: ['light-green', 'lime', 'amber', 'orange', 'deep-orange'],
+      emptyColor: 'blue-grey lighten-3',
       batchProgress: 0
     }
   },
@@ -62,7 +63,9 @@ export default {
       return data.batch.style
     },
     name: data => {
-      return data.batch.name
+      let name = data.batch.name
+      if (!name && data.status === 'empty') return 'Empty'
+      return name
     },
     status: data => {
       return data.batch.status
@@ -79,12 +82,14 @@ export default {
     baseColor: function () {
       if (this.status === 'ontap') {
         return this.onTapColors[this.batch.tap - 1]
+      } else if (this.status === 'empty') {
+        return this.emptyColor
       } else {
         return this.upcomingColors[this.index]
       }
     },
     bgColor: function () {
-      return this.baseColor + ' darken-2'
+      return this.status === 'empty' ? this.baseColor + ' lighten-2' : this.baseColor + ' darken-2'
     },
     buttonColor: function () {
       return this.baseColor + ' lighten-2'
