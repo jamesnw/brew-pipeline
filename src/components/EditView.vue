@@ -81,6 +81,7 @@ export default {
           }, 3000)
         })
         .catch(function (error) {
+          // eslint-disable-next-line no-console
           console.log(error)
         })
     },
