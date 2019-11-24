@@ -26,6 +26,7 @@
         <v-layout class="ml-1"  wrap>
             <kicked-view v-for="(batch,i) in sortedKicked" :key="i" :batch="batch" />
         </v-layout>
+        <abv-graph :all-beers="allBeers"/>
       </v-container>
        <v-footer fixed app>
       <span>Updated: {{updated}}</span>
@@ -39,6 +40,7 @@
 <script>
 import BatchView from './components/BatchView'
 import KickedView from './components/KickedView'
+import AbvGraph from './components/AbvGraph'
 import axios from 'axios'
 
 export default {
@@ -46,6 +48,7 @@ export default {
     return {
       title: 'What to Brewery Pipeline',
       ontap: [],
+      allBeers: [],
       upcoming: [],
       kicked: [],
       updated: '',
@@ -57,6 +60,7 @@ export default {
     var vm = this
     axios.get(vm.url).then(function (res) {
       var beers = res.data.beers
+      vm.allBeers = beers
       var ontap = beers
         .filter(function (o) {
           return o.status === 'ontap'
@@ -100,7 +104,8 @@ export default {
   },
   components: {
     BatchView,
-    KickedView
+    KickedView,
+    AbvGraph
   }
 }
 </script>
