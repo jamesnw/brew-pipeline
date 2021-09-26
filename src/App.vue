@@ -53,7 +53,7 @@ export default {
       kicked: [],
       updated: '',
       copyright: new Date().getFullYear(),
-      url: 'http://up.jamesnweber.com/_kegs/api/model.php'
+      url: '/beers.json'
     }
   },
   created: function () {
