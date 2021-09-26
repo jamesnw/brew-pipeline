@@ -61,7 +61,6 @@ export default {
       kicked: [],
       updated: '',
       copyright: new Date().getFullYear(),
-      url: '/beers.json',
       data: Dynamic
     }
   },
