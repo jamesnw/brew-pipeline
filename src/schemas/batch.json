@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "abv": { "type": "string" },
+    "description": { "type": "string" },
+    "empty": { "type": "string" },
+    "style": { "type": "string" },
+    "untappd": { "type": "string" },
+    "kegged": { "type": "string" },
+    "tap": { "type": "number" },
+    "status": { "type": "string", "enum": ["kicked", "ontap"] }
+  },
+  "required": ["name", "status"],
+  "additonalProperties": false
+}
