@@ -356,7 +356,7 @@
       "description": "Goshen Homebrew Club Solera Lambic, Keg hopped with Bru-1",
       "empty": "6/15/2020",
       "kegged": "3/15/2020",
-      "status": "kegged",
+      "status": "kicked",
       "style": "Lambic",
       "tap": null,
       "untappd": "https://untappd.com/b/what-to-brewery-dry-hopped-solera/3756015"
@@ -397,7 +397,7 @@
       "name": "Tettnanger Pilsener",
       "abv": "4.6",
       "description": "Pilsener with Tettnanger hops.",
-      "status": "fermenting",
+      "status": "kicked",
       "style": "German Pils"
     },
     {
