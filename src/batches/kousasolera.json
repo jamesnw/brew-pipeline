@@ -6,6 +6,6 @@
   "kegged": "4/1/2021",
   "status": "upcoming",
   "style": "Lambic",
-  "tap": null,
+  "tap": 4,
   "untappd": ""
 }
