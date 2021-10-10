@@ -2,10 +2,9 @@
   "name": "Chocolate Coffee Stout",
   "abv": "5.4",
   "description": "Coffee and Chocolate Stout",
-  "empty": "11/15/2021",
+  "empty": "10/1/2021",
   "kegged": "4/15/2021",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Sweet Stout",
-  "tap": 1,
   "untappd": ""
 }
