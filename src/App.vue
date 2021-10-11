@@ -49,7 +49,6 @@
 import BatchView from './components/BatchView'
 import KickedView from './components/KickedView'
 import AbvGraph from './components/AbvGraph'
-import AllInfo from './api/all'
 import Dynamic from './api/dynamic'
 export default {
   data () {
@@ -59,7 +58,6 @@ export default {
       allBeers: [],
       upcoming: [],
       kicked: [],
-      updated: '',
       copyright: new Date().getFullYear(),
       data: Dynamic
     }
@@ -95,11 +93,11 @@ export default {
     vm.kicked = beers.filter(function (o) {
       return ['kicked'].includes(o.status)
     })
-
-    var y = new Date(AllInfo.updated)
-    vm.updated = y.toLocaleString()
   },
   computed: {
+    updated () {
+      return new Date(document.documentElement.dataset.buildTimestamp).toLocaleString()
+    },
     sortedKicked () {
       return this.kicked.concat().sort((a, b) => {
         let aD = new Date(a.empty)
