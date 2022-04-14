@@ -1,11 +1,11 @@
 {
   "name": "Hangunder",
-  "abv": "",
+  "abv": "4.2",
   "description": "Strata Galaxy",
-  "empty": "",
-  "kegged": "",
-  "status": "fermenting",
+  "empty": "8/1/2022",
+  "kegged": "4/1/2022",
+  "status": "ontap",
   "style": "Australian Sparkling Ale",
-  "tap": null,
-  "untappd": ""
+  "tap": 1,
+  "untappd": "https://untappd.com/b/what-to-brewery-hangunder/4774946"
 }
