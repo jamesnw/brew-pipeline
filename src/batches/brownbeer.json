@@ -4,8 +4,8 @@
   "description": "Cold Extract Session Beer",
   "empty": "1/1/2022",
   "kegged": "10/1/2021",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Session",
-  "tap": 2,
+  "tap": null,
   "untappd": ""
 }
