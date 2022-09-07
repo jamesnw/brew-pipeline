@@ -2,10 +2,10 @@
   "name": "Levadopa",
   "abv": "5.4",
   "description": "Malty beer and cabernet",
-  "empty": "12/31/2021",
+  "empty": "9/6/2022",
   "kegged": "7/13/2021",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Oenobeer",
-  "tap": 3,
+  "tap": undefined,
   "untappd": ""
 }
