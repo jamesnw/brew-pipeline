@@ -1,11 +1,11 @@
 {
   "name": "Hazy Hearted",
-  "abv": "",
+  "abv": "6.4",
   "description": "Thiolized Two Hearted clone, with Phantasm, Cosmic Punch and mash hops.",
-  "empty": "",
-  "kegged": "",
-  "status": "fermenting",
+  "empty": "3/15/2023",
+  "kegged": "11/12/2022",
+  "status": "ontap",
   "style": "Hazy IPA",
-  "tap": null,
+  "tap": 2,
   "untappd": ""
 }
