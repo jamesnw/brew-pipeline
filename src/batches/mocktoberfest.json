@@ -2,10 +2,10 @@
   "name": "Mocktoberfest",
   "abv": "",
   "description": "",
-  "empty": "3/1/2023",
+  "empty": "3/16/2023",
   "kegged": "10/1/2022",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Märzen",
-  "tap": 3,
+  "tap": null,
   "untappd": ""
 }
