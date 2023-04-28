@@ -3,10 +3,10 @@
   "name": "Red Solera",
   "abv": "",
   "description": "Goshen Homebrew Club Solera ",
-  "empty": "",
-  "kegged": "5/1/2023",
-  "status": "fermenting",
+  "empty": "5/1/2023",
+  "kegged": "4/27/2023",
+  "status": "kegged",
   "style": "Lambic",
-  "tap": null,
+  "tap": 3,
   "untappd": ""
 }
