@@ -1,11 +1,11 @@
 {
-  "name": "Chocolate Coffee Stout",
+  "name": "Breakfast Stout",
   "abv": "",
   "description": "",
   "empty": "",
   "kegged": "",
-  "status": "planned",
-  "style": "Imperial Stout",
+  "status": "fermenting",
+  "style": "Coffee Stout",
   "tap": null,
   "untappd": ""
 }
