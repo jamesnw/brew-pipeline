@@ -1,11 +1,11 @@
 {
   "name": "Breakfast Stout",
-  "abv": "",
-  "description": "",
-  "empty": "",
-  "kegged": "",
-  "status": "fermenting",
+  "abv": "6.4",
+  "description": "Coffee, chocolate, vanilla. A seasonally inappropriate brew.",
+  "empty": "11/5/2023",
+  "kegged": "5/25/2023",
+  "status": "ontap",
   "style": "Coffee Stout",
-  "tap": null,
+  "tap": 2,
   "untappd": ""
 }
