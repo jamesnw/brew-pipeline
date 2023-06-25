@@ -2,10 +2,10 @@
   "name": "The Hoppy Oeno",
   "abv": "9.3",
   "description": "Lots of cab juice, lots of light malt, lots of Triumph hops",
-  "empty": "3/30/2023",
+  "empty": "2/23/2023",
   "kegged": "9/1/2021",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Oenobeer",
-  "tap": 5,
+  "tap": null,
   "untappd": ""
 }

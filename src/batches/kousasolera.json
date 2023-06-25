@@ -1,11 +1,11 @@
 {
   "name": "Kousa Solera",
   "abv": "",
-  "description": "Goshen Homebrew Club SOlera ",
-  "empty": "4/1/2022",
+  "description": "Goshen Homebrew Club Solera ",
+  "empty": "5/1/2023",
   "kegged": "4/1/2021",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Lambic",
-  "tap": 4,
+  "tap": null,
   "untappd": ""
 }

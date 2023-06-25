@@ -4,8 +4,8 @@
   "description": "Hazy IPA with Wai-iti, Wakatu, Waimea, Motueka and Nelson hops.",
   "empty": "10/31/2022",
   "kegged": "6/4/2022",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Hazy IPA",
-  "tap": 2,
+  "tap": null,
   "untappd": "https://untappd.com/b/what-to-brewery-flight-of-the-kiwi/4883406"
 }
