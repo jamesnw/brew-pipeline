@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vite",
-    "build": "vue-cli-service build",
+    "build": "vite build",
     "lint": "eslint src",
     "test:unit": "vue-cli-service test:unit"
   },
