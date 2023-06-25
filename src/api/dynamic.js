@@ -1,7 +1,7 @@
-const req = require.context('../batches/', true, /^\.\/.*.json$/)
+const req = import.meta.glob('../batches/*.json', { eager: true })
 const beers = []
-req.keys().forEach(key => {
-  const json = req(key)
+Object.keys(req).forEach(key => {
+  const json = req[key]
   if (json.beers) {
     beers.push(...json.beers)
   } else {

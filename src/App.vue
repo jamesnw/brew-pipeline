@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import BatchView from './components/BatchView'
-import KickedView from './components/KickedView'
-import AbvGraph from './components/AbvGraph'
+import BatchView from './components/BatchView.vue'
+import KickedView from './components/KickedView.vue'
+import AbvGraph from './components/AbvGraph.vue'
 import Dynamic from './api/dynamic'
 export default {
   data () {
@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     updated () {
-      return new Date(document.documentElement.dataset.buildTimestamp).toLocaleString()
+      return new Date(BUILD_TIMESTAMP).toLocaleString()
     },
     sortedKicked () {
       return this.kicked.concat().sort((a, b) => {

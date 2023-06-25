@@ -35,8 +35,8 @@
 
 <script>
 import axios from 'axios'
-import EditList from './EditList'
-import LoginView from './LoginView'
+import EditList from './EditList.vue'
+import LoginView from './LoginView.vue'
 export default {
   data: () => {
     return {

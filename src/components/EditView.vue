@@ -19,7 +19,7 @@
 
 <script>
 import axios from 'axios'
-import KegForm from './KegForm'
+import KegForm from './KegForm.vue'
 
 export default {
   components: { KegForm },
