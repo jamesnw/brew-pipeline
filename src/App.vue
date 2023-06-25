@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar fixed app dark color="purple darken-3">
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid grid-list-xs>
@@ -46,12 +46,12 @@
 </template>
 
 <script>
-import BatchView from './components/BatchView.vue'
-import KickedView from './components/KickedView.vue'
-import AbvGraph from './components/AbvGraph.vue'
-import Dynamic from './api/dynamic'
+import BatchView from './components/BatchView.vue';
+import KickedView from './components/KickedView.vue';
+import AbvGraph from './components/AbvGraph.vue';
+import kegData from './api/dynamic';
 export default {
-  data () {
+  data() {
     return {
       title: 'What to Brewery Pipeline',
       ontap: [],
@@ -59,57 +59,33 @@ export default {
       upcoming: [],
       kicked: [],
       copyright: new Date().getFullYear(),
-      data: Dynamic
-    }
+      data: Dynamic,
+    };
   },
   created: function () {
-    var vm = this
-    var { beers } = Dynamic
-    vm.allBeers = beers
-    var ontap = beers
-      .filter(function (o) {
-        return o.status === 'ontap'
-      })
-      .sort(function (o, p) {
-        return o.tap > p.tap ? 1 : -1
-      })
-    let result = [...Array(6).keys()]
-    result = result.map(i => {
-      i = i + 1
-      let tap = ontap.filter(x => x.tap === i)
-      if (tap.length === 0) {
-        return { tap: i, status: 'empty' }
-      } else if (tap.length === 1) {
-        return tap[0]
-      } else {
-        throw new Error('Double tap!')
-      }
-    })
-    vm.ontap = result
-    vm.upcoming = beers.filter(function (o) {
-      var upcoming = ['fermenting', 'planned', 'kegged']
-      return upcoming.includes(o.status)
-    })
-    vm.kicked = beers.filter(function (o) {
-      return ['kicked'].includes(o.status)
-    })
+    var vm = this;
+    var { beers, ontap, upcoming, kicked } = kegData;
+    vm.allBeers = beers;
+    vm.ontap = ontap;
+    vm.upcoming = upcoming;
+    vm.kicked = kicked;
   },
   computed: {
-    updated () {
-      return new Date(BUILD_TIMESTAMP).toLocaleString()
+    updated() {
+      return new Date(BUILD_TIMESTAMP).toLocaleString();
     },
-    sortedKicked () {
+    sortedKicked() {
       return this.kicked.concat().sort((a, b) => {
-        let aD = new Date(a.empty)
-        let bD = new Date(b.empty)
-        return aD > bD ? -1 : 1
-      })
-    }
+        let aD = new Date(a.empty);
+        let bD = new Date(b.empty);
+        return aD > bD ? -1 : 1;
+      });
+    },
   },
   components: {
     BatchView,
     KickedView,
-    AbvGraph
-  }
-}
+    AbvGraph,
+  },
+};
 </script>

@@ -9,6 +9,37 @@ Object.keys(req).forEach(key => {
   }
 })
 
+var ontap = beers
+  .filter(function (o) {
+    return o.status === 'ontap'
+  })
+  .sort(function (o, p) {
+    return o.tap > p.tap ? 1 : -1
+  })
+
+let beersPerTap = [...Array(6).keys()]
+beersPerTap = beersPerTap.map(i => {
+  i = i + 1
+  let tap = ontap.filter(x => x.tap === i)
+  if (tap.length === 0) {
+    return { tap: i, status: 'empty' }
+  } else if (tap.length === 1) {
+    return tap[0]
+  } else {
+    throw new Error('Double tap!')
+  }
+})
+const upcoming = beers.filter(function (o) {
+  var upcoming = ['fermenting', 'planned', 'kegged']
+  return upcoming.includes(o.status)
+})
+const kicked = beers.filter(function (o) {
+  return ['kicked'].includes(o.status)
+});
+
 export default {
-  beers
+  beers,
+  ontap: beersPerTap,
+  upcoming,
+  kicked,
 }
