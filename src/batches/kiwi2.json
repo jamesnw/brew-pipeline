@@ -1,11 +1,11 @@
 {
   "name": "Hiphopopotamus vs. Rhymenoceros",
-  "abv": "",
+  "abv": "5.5",
   "description": "NZ Pils with Pacific Jade and Motueka",
-  "empty": "",
-  "kegged": "",
+  "empty": "9/17/2023",
+  "kegged": "6/17/2023",
   "status": "fermenting",
   "style": "NZ Pils",
-  "tap": null,
+  "tap": 5,
   "untappd": ""
 }
