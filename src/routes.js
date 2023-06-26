@@ -1,7 +1,7 @@
-import App from './App'
-import Edit from './components/Edit'
-import EditView from './components/EditView'
-import NewKeg from './components/NewKeg'
+import App from './App.vue'
+import Edit from './components/Edit.vue'
+import EditView from './components/EditView.vue'
+import NewKeg from './components/NewKeg.vue'
 export default [
   {
     path: '',

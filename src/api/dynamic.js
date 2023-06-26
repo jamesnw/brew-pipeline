@@ -1,7 +1,7 @@
-const req = require.context('../batches/', true, /^\.\/.*.json$/)
+const req = import.meta.glob('../batches/*.json', { eager: true })
 const beers = []
-req.keys().forEach(key => {
-  const json = req(key)
+Object.keys(req).forEach(key => {
+  const json = req[key]
   if (json.beers) {
     beers.push(...json.beers)
   } else {
@@ -9,6 +9,33 @@ req.keys().forEach(key => {
   }
 })
 
+var ontap = beers
+  .filter(function (o) {
+    return o.status === 'ontap'
+  })
+  .sort(function (o, p) {
+    return o.tap > p.tap ? 1 : -1
+  })
+
+let beersPerTap = [...Array(6).keys()]
+beersPerTap = beersPerTap.map(i => {
+  i = i + 1
+  let tap = ontap.filter(x => x.tap === i)
+  if (tap.length === 0) {
+    return { tap: i, status: 'empty' }
+  } else return tap[0]
+})
+const upcoming = beers.filter(function (o) {
+  var upcoming = ['fermenting', 'planned', 'kegged']
+  return upcoming.includes(o.status)
+})
+const kicked = beers.filter(function (o) {
+  return ['kicked'].includes(o.status)
+});
+
 export default {
-  beers
+  beers,
+  ontap: beersPerTap,
+  upcoming,
+  kicked,
 }

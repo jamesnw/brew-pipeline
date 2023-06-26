@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from './routes'
+import routes from './routes.js'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import RouterView from './components/RouterView'
+import RouterView from './components/RouterView.vue'
 Vue.use(VueRouter)
 Vue.use(Vuetify, { iconfont: 'md' })
 

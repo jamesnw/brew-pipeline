@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import KegForm from './KegForm'
+import KegForm from './KegForm.vue'
 import axios from 'axios'
 export default {
   components: { KegForm },
