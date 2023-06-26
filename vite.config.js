@@ -16,4 +16,8 @@ export default defineConfig({
   define: {
     BUILD_TIMESTAMP: JSON.stringify(new Date()),
  },
+ test: {
+  globals: true,
+  // alias: [{ find: /^vue$/, replacement: 'vue/dist/vue.runtime.common.js' }],
+},
 })

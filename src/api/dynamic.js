@@ -23,11 +23,7 @@ beersPerTap = beersPerTap.map(i => {
   let tap = ontap.filter(x => x.tap === i)
   if (tap.length === 0) {
     return { tap: i, status: 'empty' }
-  } else if (tap.length === 1) {
-    return tap[0]
-  } else {
-    throw new Error('Double tap!')
-  }
+  } else return tap[0]
 })
 const upcoming = beers.filter(function (o) {
   var upcoming = ['fermenting', 'planned', 'kegged']

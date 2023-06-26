@@ -41,7 +41,7 @@
         <v-spacer></v-spacer>
         <span>&copy; {{ copyright }}</span>
       </v-footer> </v-content
-    >>
+    >
   </div>
 </template>
 
@@ -59,7 +59,7 @@ export default {
       upcoming: [],
       kicked: [],
       copyright: new Date().getFullYear(),
-      data: Dynamic,
+      data: kegData,
     };
   },
   created: function () {
