@@ -9,7 +9,7 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "core-js": "^2.6.5",
     "lodash": "^4.17.21",
     "vue": "^2.7.14",
