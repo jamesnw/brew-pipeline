@@ -1,5 +1,5 @@
 <template>
-  <v-flex md4 sm6 xs12 class="pa-1 mt-1">
+  <v-flex sm6 xs12 class="pa-1 mt-1">
     <v-card :color="bgColor" class="white--text">
       <div class="tap-name">{{batch.tap}}</div>
       <v-card-title primary-title>

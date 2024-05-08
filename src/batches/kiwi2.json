@@ -3,9 +3,9 @@
   "abv": "5.5",
   "description": "NZ Pils with Pacific Jade and Motueka",
   "empty": "9/17/2023",
-  "kegged": "6/17/2023",
-  "status": "ontap",
+  "kegged": "3/01/2024",
+  "status": "kicked",
   "style": "New Zealand Pils",
-  "tap": 5,
+  "tap": null,
   "untappd": ""
 }

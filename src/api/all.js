@@ -238,7 +238,7 @@ export default {
       description: "It's just water",
       status: 'ontap',
       style: 'Historical Style',
-      tap: 6
+      tap: 4
     },
     {
       name: 'I like to ride my kviekcycle',

@@ -17,7 +17,7 @@ var ontap = beers
     return o.tap > p.tap ? 1 : -1
   })
 
-let beersPerTap = [...Array(6).keys()]
+let beersPerTap = [...Array(4).keys()]
 beersPerTap = beersPerTap.map(i => {
   i = i + 1
   let tap = ontap.filter(x => x.tap === i)
