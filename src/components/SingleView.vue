@@ -68,6 +68,7 @@ a {
   text-decoration: none;
   border: .25em double oklch(from var(--initial-color) .8 c h);
   text-align: center;
+  font-weight: bold;
 
   &:hover {
     --hue-change: 60;
