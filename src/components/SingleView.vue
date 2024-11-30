@@ -34,6 +34,7 @@ article {
   --initial-color: oklch(.2 40% var(--hue));
   background-color: var(--initial-color);
   height: 100vh;
+  color: white;
   color: oklch(from var(--initial-color) 0.8 c h);
   padding: 1em;
   font-size: 2em;
