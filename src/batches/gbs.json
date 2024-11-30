@@ -4,8 +4,8 @@
   "description": "Coffee, chocolate, vanilla. A seasonally inappropriate brew.",
   "empty": "11/5/2023",
   "kegged": "5/25/2023",
-  "status": "ontap",
+  "status": "kicked",
   "style": "Coffee Stout",
-  "tap": 2,
+  "tap": null,
   "untappd": ""
 }
