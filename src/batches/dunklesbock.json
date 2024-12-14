@@ -1,10 +1,11 @@
 {
-  "name": "Dunkles Bock",
+  "name": "2 Bock Chock",
   "abv": "5.4",
-  "description": "Malty bock beer",
+  "description": "Malty and dark, brewed with Lutra.",
   "empty": "10/20/2024",
   "kegged": "3/01/2025",
   "status": "ontap",
   "style": "Dunkles Bock",
-  "tap": 2
+  "tap": 2,
+  "untappd": "https://untappd.com/b/what-to-brewery-2-bock-chock/6094773"
 }
